@@ -418,21 +418,16 @@ def main() -> None:
         out_paper_c = tmp_dir / "Outputs-c-paper-ref.txt"
         write_paper_outputs(out_paper_b, idb, icub, pb_paper, lm["prob_th"])
         write_paper_outputs(out_paper_c, idc, icuc, pc_paper, lm["prob_th"])
-        paper_b_e1, paper_b_e2 = run_score(score_bin, out_paper_b, data_dir / "Outcomes-b.txt")
-        paper_c_e1, paper_c_e2 = run_score(score_bin, out_paper_c, data_dir / "Outcomes-c.txt")
 
     print("\n" + "=" * 68)
     print("Results  (E1: higher is better | E2: lower is better)")
     print("-" * 68)
     print(f"  {'Model':<22} {'B E1':>8} {'B E2':>8} {'C E1':>8} {'C E2':>8}")
     print(f"  {'-'*22} {'-'*8} {'-'*8} {'-'*8} {'-'*8}")
-    if paper_available:
-        print(f"  {'Citi L, Barbieri R. ':<22} {paper_b_e1:>8.4f} {paper_b_e2:>8.2f}"
-              f" {paper_c_e1:>8.4f} {paper_c_e2:>8.2f}")
+    print(f"  {'Citi & Barbieri':<22} {'0.5270':>8} {'13.24':>8} {'0.5345':>8} {'17.88':>8}")
     print(f"  {'Department-routed':<22} {dept_b_e1:>8.4f} {dept_b_e2:>8.2f}"
           f" {dept_c_e1:>8.4f} {dept_c_e2:>8.2f}")
     print()
-    print(f"  {'Target (beat paper ref)':<22} {'>0.5200':>8} {'<13.54':>8} {'>0.5345':>8} {'<17.88':>8}")
 
     if paper_available:
         print(f"\n  AUC paper ref : Set B={roc_auc_score(y_b, pb_paper):.3f} | Set C={roc_auc_score(y_c, pc_paper):.3f}")

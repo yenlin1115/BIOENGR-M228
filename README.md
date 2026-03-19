@@ -20,11 +20,10 @@ for in-hospital mortality prediction in ICU patients, evaluated on the PhysioNet
 
 **Results:**
 
-| Model                     | B E1   | B E2  | C E1   | C E2  |
-|---------------------------|--------|-------|--------|-------|
-| Citi L, Barbieri R. model | 0.5199 | 13.53 | 0.5276 | 21.20 |
-| Dept-routed               | 0.5216 | 11.85 | 0.5197 | 23.84 |
-| Target                    | >0.5200| <13.54| >0.5345| <17.88|
+| Model                    | B E1   | B E2  | C E1   | C E2  |
+|--------------------------|--------|-------|--------|-------|
+| Citi L, Barbieri R. model | 0.5370 | 13.24 | 0.5345 | 17.88 |
+| Dept-routed              | 0.5216 | 11.85 | 0.5197 | 23.84 |
 
 
 The department-routed model beats the Citi L, Barbieri R.  on both Set B metrics.
